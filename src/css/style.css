@@ -346,6 +346,11 @@ end the common
         -ms-flex-pack: justify;
         justify-content: space-between;
         margin: 15px 0; }
+        .header__right .cart__item__img {
+          -o-object-fit: cover;
+          object-fit: cover;
+          width: 20%;
+          height: 40px; }
         .header__right .cart__item__description__name {
           font-size: 12px;
           font-weight: 500;
@@ -370,7 +375,8 @@ end the common
         float: left;
         background: black;
         color: white;
-        padding: 4px 10px; }
+        padding: 4px 10px;
+        margin-bottom: 15px; }
     .header__right .cart:before {
       position: absolute;
       top: -11px;
@@ -429,7 +435,7 @@ end the common
 .modal {
   position: fixed;
   /* Stay in place */
-  z-index: 1;
+  z-index: 999;
   /* Sit on top */
   padding-top: 100px;
   /* Location of the box */
@@ -445,8 +451,7 @@ end the common
   /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4);
   /* Black w/ opacity */ }
-  .modal:before {
-    content: 'x';
+  .modal__close {
     position: absolute;
     top: 10%;
     left: 50%;
@@ -514,9 +519,6 @@ end the common
   font-size: 28px;
   font-weight: bold; }
 
-html:hover .modal {
-  display: none; }
-
 .intro {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -528,7 +530,8 @@ html:hover .modal {
   overflow: hidden;
   height: 75vh; }
   .intro img {
-    z-index: -1; }
+    z-index: -1;
+    height: 40vh; }
   .intro__left {
     color: #78973c;
     text-align: center; }
@@ -818,7 +821,7 @@ html:hover .modal {
   background: url("../img/home/background_home.png");
   overflow: hidden;
   border-top: solid 1px #ccc;
-  padding-top: 30px; }
+  padding: 30px 0; }
   .list-product__header {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -888,10 +891,15 @@ html:hover .modal {
   -ms-flex-align: center;
   align-items: center; }
   .products .product {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
     margin: 0 10px;
     padding: 20px 0;
     background: white;
     height: 100%; }
+    .products .product:hover .product__detail__button {
+      visibility: visible; }
     .products .product__img {
       -o-object-fit: cover;
       object-fit: cover;
@@ -920,20 +928,22 @@ html:hover .modal {
           color: #28a745; }
         .products .product__detail__price__old {
           opacity: 0.4; }
-      .products .product__detail__button button {
-        padding: 10px 20px;
-        margin: 10px 2px;
-        border-radius: 15px;
-        border: solid 1px #ccc;
-        font-weight: bold;
-        font-weight: bold;
-        background: transparent; }
-        .products .product__detail__button button:nth-child(2) {
-          background: #28a745; }
-        .products .product__detail__button button i {
+      .products .product__detail__button {
+        visibility: hidden; }
+        .products .product__detail__button button {
+          padding: 10px;
+          margin: 10px 2px;
+          border-radius: 15px;
+          border: solid 1px #ccc;
+          font-weight: bold;
+          font-weight: bold;
+          background: transparent; }
+          .products .product__detail__button button:nth-child(2) {
+            background: #28a745; }
+        .products .product__detail__button i {
           font-size: 10px;
           color: white; }
-        .products .product__detail__button button i.fa-refresh {
+        .products .product__detail__button i.fa-refresh {
           color: black; }
     @media screen and (min-width: 1000px) {
       .products .product:nth-child(1), .products .product:nth-child(2), .products .product:nth-child(7), .products .product:nth-child(8) {
@@ -1019,7 +1029,8 @@ html:hover .modal {
   .social p {
     opacity: 0.4;
     font-weight: bold;
-    font-size: 12px; }
+    font-size: 12px;
+    text-transform: uppercase; }
     .social p:first-child {
       opacity: 1; }
     @media screen and (min-width: 450px) {
@@ -1049,10 +1060,14 @@ html:hover .modal {
     .social p i {
       background: white;
       color: black;
-      font-size: 14px;
+      font-size: 16px;
+      font-weight: 500;
       border-radius: 50%;
+      -webkit-clip-path: circle(50% at 50% 50%);
+      clip-path: circle(50% at 50% 50%);
       border: solid 2px black;
-      padding: 12px; }
+      padding: 8px;
+      margin-right: 5px; }
       .social p i .fa {
         padding: 0;
         width: 0; }
@@ -1078,7 +1093,8 @@ html:hover .modal {
   position: relative; }
   .abouts .about__header {
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 600;
+    text-transform: uppercase;
     text-align: center; }
   .abouts .about .img_arrow {
     margin: 20px 0 31px 0;
@@ -1087,9 +1103,13 @@ html:hover .modal {
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%); }
 
+.abouts .about:nth-child(1) .about__description p:nth-child(3) {
+  font-size: 13px; }
+
 .abouts .about:nth-child(1) .about__description p:nth-child(2) {
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
   margin: 20px 0; }
 
 .abouts .about:nth-child(1) .about__footer p {
@@ -1097,9 +1117,13 @@ html:hover .modal {
   font-style: italic;
   color: #ccc; }
 
+.abouts .about:nth-child(2) .about__description p {
+  font-size: 13px; }
+
 .abouts .about:nth-child(2) .about__description p:nth-child(2) {
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
   padding-bottom: 20px;
   border-bottom: solid 1px #ccc; }
 
@@ -1752,6 +1776,22 @@ html:hover .modal {
     font-weight: bold; }
     .shopping-cart tr td:nth-child(3) span, .shopping-cart tr td:nth-child(5) span {
       vertical-align: sub; }
+  .shopping-cart tr td:nth-child(1) {
+    width: 15%; }
+  .shopping-cart tr td:nth-child(2) {
+    width: 35%; }
+  .shopping-cart tr td:nth-child(3) {
+    width: 15%; }
+  .shopping-cart tr td:nth-child(4) {
+    width: 15%; }
+  .shopping-cart tr td:nth-child(5) {
+    width: 15%; }
+  .shopping-cart tr td:nth-child(6) {
+    width: 5%; }
+  .shopping-cart tr img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%; }
   .shopping-cart__button {
     float: right;
     clear: both;

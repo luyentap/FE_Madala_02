@@ -1,0 +1,15 @@
+{
+  "hot-product": [
+    { "id": 1, "img":"../img/home/Product copy 9.png","brand":"TYFANY","name_type":"Mỹ phẩm châu âu","old_price":45000,"new_price":35000 },
+    { "id": 2,"img":"../img/home/Product copy 4.png", "brand":"OHUI","name_type":"Mỹ phẩm châu âu","old_price":45000,"new_price":35000 },
+    { "id": 3,"img":"../img/home/01_Home_32.jpg", "brand":"HOME","name_type":"Mỹ phẩm châu âu","old_price":45000,"new_price":35000 },
+    { "id": 4,"img":"../img/home/01_Home_35.jpg", "brand":"DEBORA","name_type":"Mỹ phẩm châu âu","old_price":45000,"new_price":35000 },
+    { "id": 5,"img":"../img/home/01_Home_38.jpg", "brand":"SAVON","name_type":"Mỹ phẩm châu âu","old_price":45000,"new_price":35000 },
+    { "id": 6,"img":"../img/home/Product copy 10.png", "brand":"TYFANCY","name_type":"Mỹ phẩm châu âu","old_price":45000,"new_price":35000 }
+
+  ],
+  "comments": [
+    { "id": 1, "body": "some comment", "postId": 1 }
+  ],
+  "profile": { "name": "typicode" }
+}

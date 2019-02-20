@@ -1,6 +1,7 @@
 include modules/header
 
 .modal
+    a(onclick="closeModal()").modal__close x
     .modal-content
         h3.list-product  GỬI EMAIL
         p Hãy gửi email của bạn cho chúng tôi để được tư vấn tốt nhất
@@ -117,9 +118,9 @@ section.list-product
                             span đ
                         .product__detail__price__old 45000
                             span đ
-        mixin product_selected()
+        mixin product_selected(img)
             .product
-                img(src="../img/home/01_Home_32.jpg")
+                img.product__img(src=img)
                 .product__detail
                     .product__detail__type OHUI
                     .product__detail__name Mỹ phẩm châu Âu
@@ -130,21 +131,21 @@ section.list-product
                         .product__detail__price__old 45000
                             span đ
                     .product__detail__button
-                        button MUA HÀNG
+                        button(onclick="addToCart(this.value)" value="0").product__detail__button__buy MUA HÀNG
                         button
                             i.fa.fa-heart
                         button
                             i.fa.fa-refresh
 
-        +product-no_selected("../img/home/Product copy 9.png")
+        +product_selected("../img/home/Product copy 9.png")
         img.arrow_left(src="../img/home/arrow_left.jpg")
-        +product-no_selected("../img/home/Product copy 4.png")
+        +product_selected("../img/home/Product copy 4.png")
         //product: is selected
-        +product_selected
-        +product-no_selected("../img/home/01_Home_35.jpg")
-        +product-no_selected("../img/home/01_Home_38.jpg")
+        +product_selected("../img/home/01_Home_32.jpg")
+        +product_selected("../img/home/01_Home_35.jpg")
+        +product_selected("../img/home/01_Home_38.jpg")
         img.arrow_right(src="../img/home/arrow-right.png")
-        +product-no_selected("../img/home/Product copy 10.png")
+        +product_selected("../img/home/Product copy 10.png")
 
 //about-us
 section.social

@@ -16,36 +16,40 @@ include modules/header
                 th Số lượng
                 th Tổng số
                 th Xóa
-            tbody
-                tr
+            tbody.shopping-cart__table__body
+                tr.shopping-cart__table__tr
                     td
                         img(src="../img/shopping cart/Layer 75.jpg")
                     td  Lắc tay D&G
                     td
                         |345.000
                         sup đ
-                    td 1
+                    td
+                        input(type="number" value=0)
                     td
                         | 345.000
                         sup đ
                     td
-                        i.fa.fa-trash
-                tr
+                        button(onclick="removeProductInCart(this.value)" value="0")
+                            i.fa.fa-trash
+                tr.shopping-cart__table__tr
                     td
                         img(src="../img/shopping cart/Layer 75.jpg")
                     td  Lắc tay D&G
                     td
                         | 345.000
                         sup đ
-                    td 1
+                    td
+                        input(type="number" value=0)
                     td
                         | 345.000
                         sup đ
                     td
-                        i.fa.fa-trash
+                        button(onclick="removeProductInCart(this.value)" value="0")
+                            i.fa.fa-trash
         .shopping-cart__button
              button Tiếp tục mua hàng
              button Xóa
-             button Cập nhật
+             button(onclick="updateCartInPage();") Cập nhật
 
 include modules/footer

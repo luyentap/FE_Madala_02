@@ -9,6 +9,7 @@
     opacity: 0.4;
     font-weight: bold;
     font-size: 12px;
+    text-transform: uppercase;
     &:first-child{
       opacity: 1;
     }
@@ -41,11 +42,14 @@
     i {
       background: white;
       color: black;
-      font-size: 14px;
+      font-size: 16px;
+      font-weight: 500;
 
       border-radius: 50%;
+      clip-path: circle(50% at 50% 50%);
       border: solid 2px black;
-      padding: 12px;
+      padding: 8px;
+      margin-right: 5px;
       .fa {
         padding: 0;
         width: 0;

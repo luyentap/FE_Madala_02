@@ -148,6 +148,9 @@
         justify-content: space-between;
         margin: 15px 0;
         &__img {
+          object-fit: cover;
+          width: 20%;
+          height: 40px;
         }
         &__description {
           &__name {
@@ -179,6 +182,7 @@
         background: black;
         color: white;
         padding: 4px 10px;
+        margin-bottom: 15px;
       }
     }
     .cart:before {
